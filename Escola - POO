@@ -1,0 +1,93 @@
+import java.util.Scanner;
+
+public class Escola {
+
+    private int matricula;
+    private String alfanumerico;
+    private double nota;
+    char conceito;
+    
+    public Escola(int matricula, String alfanumerico, double nota) {
+        this.matricula = matricula;
+        this.alfanumerico = alfanumerico;
+        this.nota = nota;
+    }
+
+    public void exibirMatricula() {
+        System.out.println("Matricula: " + matricula);
+    }
+
+    public void exibirAlfa() {
+        System.out.println("Alfanumerico: " + alfanumerico);
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
+
+    public void setAlfanumerico(String alfanumerico) {
+        this.alfanumerico = alfanumerico;
+    }
+
+    public void setNota(double nota) {
+        if (nota >= 9.0 && nota <= 10.0) {
+            conceito = 'A';
+        } else if (nota >= 7.0 && nota <= 8.9) {
+            conceito = 'B';
+        } else if (nota >= 5.0 && nota <= 6.9) {
+            conceito = 'C';
+        } else if (nota >= 0.0 && nota <= 4.9) {
+            conceito = 'D';
+        }
+        this.nota = nota;
+    }
+
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public String getAlfanumerico() {
+        return alfanumerico;
+    }
+
+    public double getNota() {
+        return nota;
+    }
+
+    public void exibirNota() {
+        System.out.println("Nota: " + nota);
+    }
+
+    public void exibirConceito() {
+        System.out.println("Conceito: " + conceito);
+    }
+}
+
+
+
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite a matricula do aluno: ");
+        int matricula = scanner.nextInt();
+
+        System.out.print("Digite o codigo alfanumerico: ");
+        String alfanumerico = scanner.next();
+
+        System.out.print("Digite a nota do aluno: ");
+        double nota = scanner.nextDouble();
+
+        Escola aluno = new Escola(matricula, alfanumerico, nota);
+
+        aluno.setNota(nota);
+
+        aluno.exibirMatricula();
+        aluno.exibirAlfa();
+        aluno.exibirNota();
+        aluno.exibirConceito();
+    }
+}
+
