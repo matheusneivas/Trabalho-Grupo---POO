@@ -6,13 +6,15 @@ public class Escola {
     private String alfanumerico;
     private double nota;
     char conceito;
-    
+
+    // Construtor
     public Escola(int matricula, String alfanumerico, double nota) {
         this.matricula = matricula;
         this.alfanumerico = alfanumerico;
         this.nota = nota;
     }
 
+    // Métodos para exibir informações
     public void exibirMatricula() {
         System.out.println("Matricula: " + matricula);
     }
@@ -21,6 +23,7 @@ public class Escola {
         System.out.println("Alfanumerico: " + alfanumerico);
     }
 
+    // Getters e Setters
     public void setMatricula(int matricula) {
         this.matricula = matricula;
     }
@@ -30,16 +33,17 @@ public class Escola {
     }
 
     public void setNota(double nota) {
-        if (nota >= 9.0 && nota <= 10.0) {
+        // Lógica para definir o conceito
+        if (nota >= 90.0 && nota <= 100.0) {
             conceito = 'A';
-        } else if (nota >= 7.0 && nota <= 8.9) {
+        } else if (nota >= 70.0 && nota <= 89.9) {
             conceito = 'B';
-        } else if (nota >= 5.0 && nota <= 6.9) {
+        } else if (nota >= 50.0 && nota <= 69.9) {
             conceito = 'C';
-        } else if (nota >= 0.0 && nota <= 4.9) {
+        } else if (nota >= 0.0 && nota <= 49.9) {
             conceito = 'D';
         }
-        this.nota = nota;
+        this.nota = nota;  // Armazena a nota
     }
 
     public int getMatricula() {
@@ -62,7 +66,6 @@ public class Escola {
         System.out.println("Conceito: " + conceito);
     }
 }
-
 
 
 
@@ -90,4 +93,3 @@ public class Main {
         aluno.exibirConceito();
     }
 }
-
